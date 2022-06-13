@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1> Weather Dashboard</h1>
+    </header>
+
+    <section id="search-area">
+
+        <div id="search-box">
+            <form id="form" class="form">
+                <label for="city-name">Search For a City:</label><br>
+                <input type="text" id="form-input" name="city-name">
+                <button type="submit" id="search-btn" value="Submit">Get Weather</button>
+            </form>
+        </div>
+
+        <div>
+            <ul id="suggested-cities">
+                <li class="city-example">
+                    Portland
+                </li>
+                <li class="city-example">
+                    Los Angeles
+                </li>
+                <li class="city-example">
+                    Charlotte
+                </li>
+                <li class="city-example">
+                    New York
+                </li>
+                <li class="city-example">
+                    Seattle
+                </li>
+                <li class="city-example">
+                    Atlanta
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="result-area">
+
+        <div id="results-box">
+            
+        </div>
+
+
+        <div id="forecast">
+
+        </div>
+    </section>
+    
+
+
+
+
+
+
+<script src="assets/script.js"></script>
+
+</body>
+</html>
