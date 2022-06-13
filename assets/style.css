@@ -20,7 +20,10 @@ header{
 header h1{
     text-align: center;
     padding-top: 3vh;
-    color: white;
+    color:cornflowerblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px darkgreen;
+    
     
 }
 
@@ -47,6 +50,7 @@ label{
     width: 25vw;
     height: 5vh;
     background-color: whitesmoke;
+    border-radius: 5px;
 
 }
 
@@ -99,6 +103,6 @@ label{
     margin-left: 30vw;
     margin-top: 3vh;
     margin-right: 3vw;
-    border-radius: 1px;
+    border-radius: 5px;
     background-color:whitesmoke;
 }
