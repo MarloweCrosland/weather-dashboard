@@ -1,23 +1,14 @@
 
 
 //capture the text input and apply to api url
-const userForm = document.getElementById('form');
-//make submit button run the get weather function
-userForm.addEventListener('submit', getCurrentWeather);
-//gets the text and trims extra spaces
+const userButton = document.getElementById('search-btn');
 var cityName = document.getElementById("form-input").value.trim();
-
-    
-
-
-
-
-
+//make submit button run the get weather function
+userButton.addEventListener('click', getCurrentWeather);
 
 function getCurrentWeather(cityName){
     //capture the text input and apply to api url
     var cityName = document.getElementById("form-input").value.trim();
-    
     var apiUrl = (`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=8879e080263c5facc743b20b89e0c596`)
     fetch(apiUrl)
     .then(function(response) {
@@ -59,7 +50,7 @@ UV: //UV VALUE
 
 //event listener for search button runs addListItem
   const button = document.getElementById('search-btn');
-  button.addEventListener('click', addListItem, cityName);
+  button.addEventListener('click', addListItem);
 
 ////////create list item with previously searched city name
  function addListItem(cityName){
@@ -81,12 +72,11 @@ var listItem = document.querySelectorAll('.city-example');
 
 
 function searchThis(){
-  console.log('click!');
 var newTerm = this.textContent;
 console.log(newTerm);
 //create search with newTerm
-var apiUrl = (`http://api.openweathermap.org/data/2.5/weather?q=${newTerm}&units=imperial&appid=8879e080263c5facc743b20b89e0c596`)
-fetch(apiUrl)
+var newUrl = (`http://api.openweathermap.org/data/2.5/weather?q=${newTerm}&units=imperial&appid=8879e080263c5facc743b20b89e0c596`)
+fetch(newUrl)
 .then(function(response) {
   // request was successful
   if (response.ok) {
