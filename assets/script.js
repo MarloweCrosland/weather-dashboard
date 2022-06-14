@@ -1,4 +1,4 @@
-
+var token = config.MY_API_TOKEN;
 
 //capture the text input and apply to api url
 const userButton = document.getElementById('search-btn');
@@ -9,7 +9,7 @@ userButton.addEventListener('click', getCurrentWeather);
 function getCurrentWeather(cityName){
     //capture the text input and apply to api url
     var cityName = document.getElementById("form-input").value.trim();
-    var apiUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=8879e080263c5facc743b20b89e0c596`)
+    var apiUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${token}`)
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
@@ -76,7 +76,7 @@ function searchThis(){
 var newTerm = this.textContent;
 console.log(newTerm);
 //create search with newTerm
-var newUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${newTerm}&units=imperial&appid=8879e080263c5facc743b20b89e0c596`)
+var newUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${newTerm}&units=imperial&appid=${token}`)
 fetch(newUrl)
 .then(function(response) {
   // request was successful
