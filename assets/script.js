@@ -36,6 +36,7 @@ resultsBox = document.getElementById('results-box');
 // html for the results box
 resultsBox.innerHTML = 
 //name, date, icon, temp, humidity, wind, icon, uv
+//UV: UV VALUE NO LONGER AVAILIBLE FOR FREE WITH THIS API
 `<p>
 City: ${cityName} <br> 
 Date: //Date <br>
@@ -43,7 +44,7 @@ Temperature: ${data.main.temp} F <br>
 Humidity: ${data.humidity} <br>
 Wind speed: ${data.wind.speed} mph <br>
 ${data.weather.icon} <br>
-UV: //UV VALUE
+
 </p>`
 };
 
