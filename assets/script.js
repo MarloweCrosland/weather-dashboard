@@ -1,4 +1,4 @@
-var token = config.MY_API_TOKEN;
+var token = '8879e080263c5facc743b20b89e0c596';
 
 //capture the text input and apply to api url
 const userButton = document.getElementById('search-btn');
