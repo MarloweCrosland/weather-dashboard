@@ -2,9 +2,45 @@ var token = '8879e080263c5facc743b20b89e0c596';
 
 //capture the text input and apply to api url
 const userButton = document.getElementById('search-btn');
-var cityName = document.getElementById("form-input").value.trim();
+var cityName = document.getElementById("form-input").value;
 //make submit button run the get weather function
 userButton.addEventListener('click', getCurrentWeather);
+userButton.addEventListener('click', getGeoInfo);
+
+
+function getGeoInfo(){
+  //gets geo code from city name
+  var cityName = document.getElementById("form-input").value;
+  var geoUrl = (`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${token}`);
+  fetch(geoUrl)
+  .then(function(response) {
+  response.json().then(function(data){
+    console.log(data[0]);
+//set lat and lon to variables
+    var a = data[0].lat
+    var b = data[0].lon
+///getting forecast info with geocode
+  var forecastUrl = (`https://api.openweathermap.org/data/2.5/forecast?lat=${a}&lon=${b}&units=imperial&appid=${token}`);
+  fetch(forecastUrl)
+  .then(function(response){
+  response.json().then(function(data){
+  console.log(data.list)
+//create boxes for the info to live in
+
+
+};
+})
+})
+})
+})
+};
+
+
+
+
+
+
+
 
 function getCurrentWeather(cityName){
     //capture the text input and apply to api url
@@ -31,6 +67,9 @@ event.preventDefault();
 };
 
 
+
+
+
 function displayWeather(data, cityName){
 resultsBox = document.getElementById('results-box');
 // html for the results box
@@ -39,10 +78,11 @@ resultsBox.innerHTML =
 //UV: UV VALUE NO LONGER AVAILIBLE FOR FREE WITH THIS API
 `<p>
 City: ${cityName} <br> 
-Date: //Date <br>
+Date: ${data.dt} unix <br>
 Temperature: ${data.main.temp} F <br>
 Humidity: ${data.humidity} <br>
 Wind speed: ${data.wind.speed} mph <br>
+UV:
 ${data.weather.icon} <br>
 
 </p>`
@@ -96,3 +136,5 @@ fetch(newUrl)
 event.preventDefault();
 
 };
+
+
